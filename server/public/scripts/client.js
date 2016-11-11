@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-  $('button').on('click', function(){
+  $('.operator').on('click', function(){
     event.preventDefault();
     var numbersObject = {};
     var operation = $(this).attr('id');
@@ -17,6 +17,8 @@ $(document).ready(function() {
       }
     });
   });
+
+  $('#clear').on('click', clearForm);
 
 });
 
@@ -35,4 +37,9 @@ function getCompleted() {
 function appendCompleted(data) {
   console.log(data);
   $('#result').text(data.number);
+}
+
+function clearForm() {
+  $('form').find('input[type=number]').val("");
+  $('#result').text("");
 }
