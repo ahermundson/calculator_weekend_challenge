@@ -3,9 +3,12 @@ var app = express();
 var bodyParser = require('body-parser');
 
 var index = require('./routes/index');
+var math = require('./routes/math');
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
+//routes
+app.use('/math', math);
 
 //Static Files
 app.use('/', index);
